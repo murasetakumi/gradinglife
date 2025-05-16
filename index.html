@@ -1,4 +1,4 @@
-    <script>
+     <script>
         // FAQのトグル機能
         document.addEventListener('DOMContentLoaded', function() {
             const faqItems = document.querySelectorAll('.faq-item');
@@ -1374,6 +1374,1262 @@
                     document.getElementById('modal-video').src = '';
                 }
             });
+        });
+    </script>
+</body>
+</html>
+
+/* セクション共通スタイル */
+        section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 500;
+            margin-bottom: 50px;
+            text-align: center;
+            position: relative;
+            font-family: 'Noto Serif JP', serif;
+        }
+        
+        .section-title:after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: -20px auto 60px;
+            color: var(--text-muted);
+        }
+        
+        .section-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        
+        /* 装飾要素 */
+        .decoration {
+            position: absolute;
+            z-index: 0;
+            opacity: 0.1;
+        }
+        
+        .decoration-circle {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            border: 2px solid var(--primary-color);
+        }
+        
+        .decoration-square {
+            width: 200px;
+            height: 200px;
+            transform: rotate(45deg);
+            border: 2px solid var(--primary-color);
+        }
+        
+        /* コンセプトセクション */
+        .concept {
+            background-color: var(--bg-medium);
+            position: relative;
+        }
+        
+        .concept:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(20, 20, 20, 0.9), rgba(20, 20, 20, 0.6));
+            z-index: 1;
+        }
+        
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+        
+        .concept-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-left: 15px;
+            font-family: 'Noto Serif JP', serif;
+        }
+        
+        .concept-text h3:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 5px;
+            background-color: var(--primary-color);
+        }
+        
+        .concept-image {
+            position: relative;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition-medium);
+        }
+        
+        .concept-image:hover {
+            transform: scale(1.02);
+        }
+        
+        .concept-image:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(255,51,51,0.2) 0%, transparent 100%);
+        }
+        
+        .concept-image img {
+            display: block;
+            width: 100%;
+            transition: var(--transition-medium);
+        }
+        
+        /* サービスセクション */
+        .services {
+            background: url('Hp2.png') center/cover no-repeat fixed;
+            position: relative;
+        }
+        
+        .services:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.95));
+            z-index: 1;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            padding: 30px;
+            background-color: var(--bg-card);
+            backdrop-filter: blur(10px);
+            transition: var(--transition-medium);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 3px solid transparent;
+            border-radius: 5px;
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .service-card:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--primary-color), transparent);
+            transform: translateX(-100%);
+            transition: var(--transition-slow);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            border-bottom-color: var(--primary-color);
+            box-shadow: 0 10px 30px rgba(255, 51, 51, 0.2);
+        }
+        
+        .service-card:hover:before {
+            transform: translateX(100%);
+        }
+        
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+            font-family: 'Noto Serif JP', serif;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .service-card h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: var(--transition-medium);
+        }
+        
+        .service-card:hover h3:after {
+            width: 80px;
+        }
+        
+        .service-card p {
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            transition: var(--transition-medium);
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1);
+        }
+        
+        .service-link {
+            font-weight: 600;
+            color: var(--primary-color);
+            display: inline-flex;
+            align-items: center;
+            margin-top: auto;
+        }
+        
+        .service-link:after {
+            content: '→';
+            margin-left: 5px;
+            transition: var(--transition-medium);
+        }
+        
+        .service-link:hover:after {
+            margin-left: 10px;
+        }
+        </style>
+</head>
+
+<body>
+    <!-- ローディングアニメーション -->
+    <div class="loader-wrapper">
+        <div class="loader"></div>
+    </div>
+
+    <!-- ヘッダー -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">GradingLife</a>
+            <button class="menu-toggle" aria-label="メニュー">
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+            <nav class="nav-links">
+                <a href="#concept">コンセプト</a>
+                <a href="#services">サービス</a>
+                <a href="#case-studies">事例</a>
+                <a href="#pricing">料金</a>
+                <a href="#faq">FAQ</a>
+                <a href="#contact" class="btn">無料相談</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <h1 class="hero-title title-font">
+                <span class="line">地図にない</span><br>
+                <span class="line">首都をつくる。</span>
+            </h1>
+            <p class="hero-subtitle">
+                <span class="line">集客採用に最新のアルゴリズムと</span><br>
+                <span class="line">プロの撮影技術を持って</span><br>
+                <span class="line">経営計画から逆算したSNS活用を支援します。</span><br>
+                <span class="line">全ての場所を首都化。</span>
+            </p>
+            <a href="#contact" class="btn">無料相談はこちら</a>
+        </div>
+        <div class="scroll-down" data-scroll-to="#concept">スクロールして続きを見る</div>
+    </section>
+
+    <!-- コンセプトセクション -->
+    <section class="concept" id="concept">
+        <div class="decoration decoration-circle" style="top: -150px; right: -150px;"></div>
+        <div class="decoration decoration-square" style="bottom: 50px; left: -100px;"></div>
+        <div class="container">
+            <h2 class="section-title fade-in">コンセプト</h2>
+            <p class="section-subtitle fade-in">経営計画から逆算したSNS活用をワンストップでご提供します</p>
+            <div class="concept-grid">
+                <div class="concept-text fade-in">
+                    <h3>あなたの前にペルソナを連れてくる<br>SNSを活用した新たな営業戦略</h3>
+                    <p>私たちは単なるSNS運用代行会社ではなく、<br>経営計画から逆算したSNS活用と映像制作を<br>ワンストップで提供。<br>あなたのビジネスを本質から理解し、<br>成果に繋がるSNSプロモーションを実現します。</p>
+                </div>
+                <div class="concept-image fade-in">
+                   <img src="Hp5.png" alt="コンセプトイメージ" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- サービスセクション -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2 class="section-title fade-in">サービス</h2>
+            <p class="section-subtitle fade-in">ビジネスの成長を加速させる多彩なソリューション</p>
+            <div class="services-grid">
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8 12H12M12 12H16M12 12V16M12 12V8M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 13.9021 3.5901 15.6665 4.5904 17.1199C4.71028 17.2904 4.77707 17.4833 4.78947 17.6836L4.92222 20.1812C4.95049 20.7145 5.47576 21.076 5.98735 20.9253L8.14687 20.3453C8.47733 20.2563 8.82954 20.3207 9.11779 20.5179C10.062 21.1401 11.1696 21.5 12.3553 21.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>SNS運用代行</h3>
+                    <p>御社のSNSアカウントを<br>専門チームが完全代行。<br>コンテンツ企画から投稿、分析、<br>改善までワンストップで実施します。</p>
+                    <a href="#contact" class="service-link">詳細を見る</a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M9 17L15 17M15 7L9 7M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12ZM16 12C16 14.2091 14.2091 16 12 16C9.79086 16 8 14.2091 8 12C8 9.79086 9.79086 8 12 8C14.2091 8 16 9.79086 16 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>SNSアドバイザー</h3>
+                    <p>社内で運用するチームに対して、<br>最新のアルゴリズムや<br>効果的な戦略をアドバイス。<br>定期的なミーティングでPDCAを回します。</p>
+                    <a href="#contact" class="service-link">詳細を見る</a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 21L12 13M12 13L16 16.9995M12 13L8 17M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>内製化研修</h3>
+                    <p>自社でSNS運用できる人材を育成。<br>実践的なノウハウを身につけ、<br>持続可能なSNS運用体制を構築します。</p>
+                    <a href="#contact" class="service-link">詳細を見る</a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24"
+                            <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.7519 11.1679L11.5547 9.03647C10.8901 8.59343 10 9.06982 10 9.86852V14.1315C10 14.9302 10.8901 15.4066 11.5547 14.9635L14.7519 12.8321C15.3457 12.4362 15.3457 11.5638 14.7519 11.1679Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>広告動画制作</h3>
+                    <p>プロの撮影技術と編集センスで、<br>SNSで拡散される高品質な広告動画を制作。<br>一眼レフ・ドローン撮影対応可能です。</p>
+                    <a href="#contact" class="service-link">詳細を見る</a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M15.5 8C15.7761 8 16 7.77614 16 7.5C16 7.22386 15.7761 7 15.5 7C15.2239 7 15 7.22386 15 7.5C15 7.77614 15.2239 8 15.5 8Z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>ブランディング動画</h3>
+                    <p>御社の価値や強みを伝える映像で、<br>ブランドイメージを確立。<br>採用や信頼構築に効果的です。</p>
+                    <a href="#contact" class="service-link">詳細を見る</a>
+                </div>
+                
+                <div class="service-card fade-in">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 16L12 8M12 8L15 10.8947M12 8L9 10.8947M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h3>SNS広告運用</h3>
+                    <p>効果的なターゲティングと<br>広告クリエイティブで、<br>費用対効果の高いSNS広告運用を<br>実現します。</p>
+                    <a href="#contact" class="service-link">詳細を見る</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 事例セクション -->
+    <section class="case-studies" id="case-studies">
+        <div class="decoration decoration-square" style="top: 100px; right: -100px;"></div>
+        <div class="container">
+            <h2 class="section-title fade-in">効果事例</h2>
+            <p class="section-subtitle fade-in">これまでの実績と成果をご紹介します</p>
+
+            <div class="success-stories fade-in">
+                <div class="success-story">
+                    <span class="success-badge">集客</span>
+                    <h3>サウナ施設の集客成功事例</h3>
+                    <p>SNS運用を始めた１ヶ月目から<br>60名以上の予約が入り、<br>継続的な集客に成功。</p>
+                    <div class="success-stats">
+                        <div class="stat">
+                            <span class="stat-number">60+</span>
+                            <span class="stat-text">予約数/月</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-text">月で効果</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="success-story">
+                    <span class="success-badge">マーケティング</span>
+                    <h3>動画マーケティングでフォロワー急増</h3>
+                    <p>戦略的な動画10本で<br>フォロワー2000人を達成。<br>3ヶ月で企業案件の依頼も多数獲得。</p>
+                    <div class="success-stats">
+                        <div class="stat">
+                            <span class="stat-number">2000+</span>
+                            <span class="stat-text">フォロワー</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">3</span>
+                            <span class="stat-text">ヶ月で効果</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="success-story">
+                    <span class="success-badge">売上アップ</span>
+                    <h3>売上20%アップの成功事例</h3>
+                    <p>SNS運用により昨年比1000万円売り上げ向上。<br>効果的なプロモーションで<br>認知拡大に成功。</p>
+                    <div class="success-stats">
+                        <div class="stat">
+                            <span class="stat-number">20<sup>%</sup></span>
+                            <span class="stat-text">売上増加</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1000<small>万円</small></span>
+                            <span class="stat-text">増収</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="success-story">
+                    <span class="success-badge">採用</span>
+                    <h3>採用活動強化の成功事例</h3>
+                    <p>運用開始から1ヶ月で<br>社員採用2名成功。<br>企業イメージ向上で<br>優秀な人材確保に貢献。</p>
+                    <div class="success-stats">
+                        <div class="stat">
+                            <span class="stat-number">2</span>
+                            <span class="stat-text">採用成功</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">1</span>
+                            <span class="stat-text">ヶ月で効果</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="sub-section-title fade-in">制作事例</h3>
+            <div class="video-gallery">
+                <div class="video-item fade-in">
+                    <div class="video-placeholder" data-video-id="l2bMKR55gt4">
+                        <img src="https://img.youtube.com/vi/l2bMKR55gt4/hqdefault.jpg" alt="企業プロモーション" loading="lazy">
+                        <div class="play-button">▶</div>
+                        <div class="video-overlay">
+                            <span class="video-category">企業プロモーション</span>
+                        </div>
+                    </div>
+                    <h4>企業プロモーション</h4>
+                </div>
+
+                <div class="video-item fade-in">
+                    <div class="video-placeholder" data-video-id="jhEklOzgFJA">
+                        <img src="https://img.youtube.com/vi/jhEklOzgFJA/hqdefault.jpg" alt="商品プロモーション" loading="lazy">
+                        <div class="play-button">▶</div>
+                        <div class="video-overlay">
+                            <span class="video-category">商品プロモーション</span>
+                        </div>
+                    </div>
+                    <h4>商品プロモーション</h4>
+                </div>
+
+                <div class="video-item fade-in">
+                    <div class="video-placeholder" data-video-id="Iy0H_C0m-ss">
+                        <img src="https://img.youtube.com/vi/Iy0H_C0m-ss/hqdefault.jpg" alt="サービス紹介" loading="lazy">
+                        <div class="play-button">▶</div>
+                        <div class="video-overlay">
+                            <span class="video-category">サービス紹介</span>
+                        </div>
+                    </div>
+                    <h4>サービス紹介</h4>
+                </div>
+
+                <div class="video-item fade-in">
+                    <div class="video-placeholder" data-video-id="24E3ow1SNNk">
+                        <img src="https://img.youtube.com/vi/24E3ow1SNNk/hqdefault.jpg" alt="ブランディング" loading="lazy">
+                        <div class="play-button">▶</div>
+                        <div class="video-overlay">
+                            <span class="video-category">ブランディング</span>
+                        </div>
+                    </div>
+                    <h4>ブランディング</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- モーダル構造 -->
+    <div id="video-modal" class="video-modal">
+        <div class="video-modal-content">
+            <span class="video-modal-close">×</span>
+            <div class="video-container">
+                <iframe id="modal-video" src="" frameborder="0" allowfullscreen></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!-- テスティモニアルセクション（新規追加） -->
+    <section class="testimonials">
+        <div class="container">
+            <h2 class="section-title fade-in">お客様の声</h2>
+            <p class="section-subtitle fade-in">実際にご利用いただいたお客様からのフィードバック</p>
+            
+            <div class="testimonial-slider">
+                <div class="testimonial-track">
+                    <div class="testimonial-slide fade-in">
+                        <div class="testimonial-content">
+                            <div class="quote-mark">"</div>
+                            <p>とてもかっこよく動画を作っていただけて会社のブランディングに繋がりました。運用もスピーディで、何より結果が出るのが素晴らしいです。</p>
+                            <div class="testimonial-author">
+                                <img src="https://via.placeholder.com/50" alt="顧客アイコン" class="author-avatar" loading="lazy">
+                                <div class="author-info">
+                                    <h4>K.S様</h4>
+                                    <p>サービス業 代表取締役</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide fade-in">
+                        <div class="testimonial-content">
+                            <div class="quote-mark">"</div>
+                            <p>どこよりも安いのにクオリティが圧倒的でした。担当の方も親身になって相談に乗ってくれて、とても安心して任せられます。</p>
+                            <div class="testimonial-author">
+                                <img src="https://via.placeholder.com/50" alt="顧客アイコン" class="author-avatar" loading="lazy">
+                                <div class="author-info">
+                                    <h4>M.T様</h4>
+                                    <p>小売業 マーケティング担当</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-slide fade-in">
+                        <div class="testimonial-content">
+                            <div class="quote-mark">"</div>
+                            <p>SNS運用に時間を割けない中、代行していただき大変助かっています。投稿内容もセンスが良く、御社らしい発信ができています。</p>
+                            <div class="testimonial-author">
+                                <img src="https://via.placeholder.com/50" alt="顧客アイコン" class="author-avatar" loading="lazy">
+                                <div class="author-info">
+                                    <h4>Y.N様</h4>
+                                    <p>製造業 広報部長</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-controls">
+                    <button class="testimonial-prev" aria-label="前のお客様の声">&#10094;</button>
+                    <div class="testimonial-dots"></div>
+                    <button class="testimonial-next" aria-label="次のお客様の声">&#10095;</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 料金セクション -->
+    <section class="pricing" id="pricing">
+        <div class="decoration decoration-circle" style="bottom: -150px; left: -150px;"></div>
+        <div class="container">
+            <h2 class="section-title fade-in">料金</h2>
+            <p class="section-subtitle fade-in">御社に一番必要なものを必要なタイミングで提案、提供いたします</p>
+            
+            <div class="pricing-grid">
+                <div class="pricing-card fade-in">
+                    <div class="pricing-popular">人気</div>
+                    <h3>SNS運用代行</h3>
+                    <div class="price">月額 3万円〜</div>
+                    <p>プランにより金額は変動しますが、<br>多くのお客様が3万〜30万円の間で<br>ご満足いただけるサービスを<br>提供しています。</p>
+                    <ul class="pricing-features">
+                        <li>コンテンツ企画・制作</li>
+                        <li>投稿運用・管理</li>
+                        <li>分析・レポート</li>
+                        <li>アルゴリズム対策</li>
+                    </ul>
+                    <a href="#contact" class="btn">詳細を問い合わせる</a>
+                </div>
+                
+                <div class="pricing-card fade-in">
+                    <h3>広告動画制作</h3>
+                    <div class="price">4万円〜/本</div>
+                    <p>目的やクオリティに応じて<br>カスタマイズ可能。<br>イベントの撮影や施設紹介は<br>8万円〜となります。</p>
+                    <ul class="pricing-features">
+                        <li>プロカメラマン撮影</li>
+                        <li>プロフェッショナル編集</li>
+                        <li>SNS最適化</li>
+                        <li>音楽・エフェクト</li>
+                    </ul>
+                    <a href="#contact" class="btn">詳細を問い合わせる</a>
+                </div>
+                
+                <div class="pricing-card fade-in">
+                    <h3>内製化研修</h3>
+                    <div class="price">約39万円〜/名</div>
+                    <p>自社でSNS運用できる人材を育成。<br>実践的なノウハウと<br>最新のトレンドを学べます。</p>
+                    <ul class="pricing-features">
+                        <li>実践的カリキュラム</li>
+                        <li>最新アルゴリズム解説</li>
+                        <li>コンテンツ制作ノウハウ</li>
+                        <li>アナリティクス活用</li>
+                    </ul>
+                    <a href="#contact" class="btn">詳細を問い合わせる</a>
+                </div>
+            </div>
+            
+            <div class="pricing-note fade-in">
+                <p>※料金は目安です。詳細な見積もりは無料相談時にご提案いたします。</p>
+                <p>※カスタムプランのご相談も承っております。お気軽にお問い合わせください。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- プロセスセクション -->
+    <section class="process" id="process">
+        <div class="container">
+            <h2 class="section-title fade-in">利用の流れ</h2>
+            <p class="section-subtitle fade-in">スムーズなサービス開始までの5つのステップ</p>
+            
+            <div class="process-steps">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <h4>無料相談申し込み</h4>
+                    <p>お問い合わせフォームからご連絡ください</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">2</div>
+                    <h4>初回面談日程調整</h4>
+                    <p>ご都合の良い日時をご提案します</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">3</div>
+                    <h4>無料ヒアリング</h4>
+                    <p>Zoomミーティングでニーズをお伺いします</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">4</div>
+                    <h4>戦略設計</h4>
+                    <p>経営計画から逆算した戦略を設計します</p>
+                </div>
+                <div class="step fade-in">
+                    <div class="step-number">5</div>
+                    <h4>運用開始</h4>
+                    <p>プランに沿って運用を開始します</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ セクション -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <h2 class="section-title fade-in">よくある質問</h2>
+            <p class="section-subtitle fade-in">お客様からよくいただくご質問にお答えします</p>
+            
+            <div class="faq-container">
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>納期はどれくらいですか？</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>制作物にもよりますが<br>早い場合は1日後〜1週間、<br>遅くとも1ヶ月程度になります。<br>緊急対応も可能ですので、<br>お気軽にご相談ください。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>個人からの依頼も可能ですか？</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>もちろん可能です。<br>会社員様や個人事業主様からも<br>ご好評いただいております。<br>個人の方向けの特別プランも<br>ございますので、ぜひご相談ください。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>相談だけ、相見積もりだけでも大丈夫ですか？</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>もちろんです。<br>無料相談だけでも必ずお役に立てる<br>アドバイスやご提案をさせていただきますので、<br>お気軽にご相談ください。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>どんな動画を作ってくれますか？</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>企業の目的から逆算した<br>価値のある動画を制作しますので<br>どの動画を作るかは<br>ご提案させていただければと思います。<br>商品PR、会社紹介、採用動画、<br>サービス紹介など、<br>幅広い用途に対応しています。</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item fade-in">
+                    <div class="faq-question">
+                        <span>対応エリアはどこまでですか？</span>
+                        <span class="toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>基本的に全国対応しております。<br>オンラインでのミーティングと遠隔でのサポートが可能です。<br>撮影が必要な場合は、愛知県を中心に<br>東海地方であれば出張費無料で対応可能です。<br>その他の地域も対応可能ですので、<br>お気軽にご相談ください。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- お問い合わせセクション -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="section-title fade-in">無料相談はこちら</h2>
+            <p class="section-subtitle fade-in">お気軽にお問い合わせください。24時間以内に返信いたします。</p>
+            
+            <form action="https://formspree.io/f/mzzrorne" method="POST" class="contact-form fade-in">
+                <div class="form-group">
+                    <label for="name">お名前</label>
+                    <input type="text" id="name" class="form-control" name="name" placeholder="お名前" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">メールアドレス</label>
+                    <input type="email" id="email" class="form-control" name="email" placeholder="メールアドレス" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">電話番号</label>
+                    <input type="tel" id="phone" class="form-control" name="phone" placeholder="電話番号">
+                </div>
+                
+                <div class="form-group">
+                    <label for="company">会社名</label>
+                    <input type="text" id="company" class="form-control" name="company" placeholder="会社名">
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">ご興味のあるサービス</label>
+                    <select id="service" class="form-control" name="service">
+                        <option value="">選択してください</option>
+                        <option value="sns-operation">SNS運用代行</option>
+                        <option value="sns-adviser">SNSアドバイザー</option>
+                        <option value="training">内製化研修</option>
+                        <option value="video-production">広告動画制作</option>
+                        <option value="branding-video">ブランディング動画</option>
+                        <option value="sns-ads">SNS広告運用</option>
+                        <option value="other">その他</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">ご相談内容</label>
+                    <textarea id="message" class="form-control" name="message" placeholder="ご相談内容" required></textarea>
+                </div>
+                
+                <div class="form-group form-checkbox">
+                    <input type="checkbox" id="privacy" name="privacy" required>
+                    <label for="privacy"><a href="#" class="privacy-link">プライバシーポリシー</a>に同意する</label>
+                </div>
+                
+                <button type="submit" class="btn btn-full">送信する</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- CTA セクション (新規追加) -->
+    <section class="cta">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="fade-in">今すぐ始めましょう</h2>
+                <p class="fade-in">最新のSNSマーケティングで、あなたのビジネスを次のレベルへ</p>
+                <a href="#contact" class="btn btn-large">無料相談する</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4 class="footer-heading">GradingLife</h4>
+                    <p>集客採用に最新のアルゴリズムと<br>プロの撮影技術を持って<br>経営計画から逆算した<br>SNS活用を支援します。</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M23 3.01s-2.018 1.192-3.14 1.53a4.48 4.48 0 00-7.86 3v1a10.66 10.66 0 01-9-4.53s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5 0-.278-.028-.556-.08-.83C21.94 5.674 23 3.01 23 3.01z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zM17.5 6.5h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-heading">サービス</h4>
+                    <ul class="footer-links">
+                        <li><a href="#services">SNS運用代行</a></li>
+                        <li><a href="#services">SNSアドバイザー</a></li>
+                        <li><a href="#services">内製化研修</a></li>
+                        <li><a href="#services">広告動画制作</a></li>
+                        <li><a href="#services">ブランディング動画</a></li>
+                        <li><a href="#services">SNS広告運用</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-heading">リソース</h4>
+                    <ul class="footer-links">
+                        <li><a href="#case-studies">事例</a></li>
+                        <li><a href="#faq">よくある質問</a></li>
+                        <li><a href="#">ブログ</a></li>
+                        <li><a href="#">お役立ち資料</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4 class="footer-heading">会社情報</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">会社概要</a></li>
+                        <li><a href="#">プライバシーポリシー</a></li>
+                        <li><a href="#">特定商取引法に基づく表記</a></li>
+                        <li><a href="#contact">お問い合わせ</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    &copy; 2025 GradingLife. All Rights Reserved.
+                </div>
+                <div class="footer-nav">
+                    <a href="#">プライバシーポリシー</a>
+                    <a href="#">特定商取引法に基づく表記</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 構造化データ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ProfessionalService",
+      "name": "GradingLife",
+      "description": "集客採用に最新のアルゴリズムとプロの撮影技術を持って経営計画から逆算したSNS活用を支援します。",
+      "url": "https://yourdomain.com",
+      "logo": "https://yourdomain.com/logo.png",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "豊田市",
+        "addressRegion": "愛知県",
+        "addressCountry": "JP"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 35.0,
+        "longitude": 137.0
+      },
+      "telephone": "0123-456-789",
+      "openingHours": "Mo-Fr 09:00-18:00",
+      "priceRange": "¥¥",
+      "sameAs": [
+        "https://twitter.com/gradinglife",
+        "https://www.facebook.com/gradinglife",
+        "https://www.instagram.com/gradinglife"
+      ],
+      "image": "https://yourdomain.com/images/office.jpg",
+      "founder": {
+        "@type": "Person",
+        "name": "創業者名"
+      },
+      "areaServed": {
+        "@type": "State",
+        "name": "愛知県"
+      },
+      "serviceArea": {
+        "@type": "GeoCircle",
+        "geoMidpoint": {
+          "@type": "GeoCoordinates",
+          "latitude": 35.0,
+          "longitude": 137.0
+        },
+        "geoRadius": "50000"
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "SNSマーケティングサービス",
+        "itemListElement": [
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "SNS運用代行",
+              "description": "御社のSNSアカウントを専門チームが完全代行。コンテンツ企画から投稿、分析、改善までワンストップで実施します。"
+            }
+          },
+          {
+            "@type": "Offer",
+            "itemOffered": {
+              "@type": "Service",
+              "name": "広告動画制作",
+              "description": "プロの撮影技術と編集センスで、SNSで拡散される高品質な広告動画を制作。一眼レフ・ドローン撮影対応可能です。"
+            }
+          }
+        ]
+      }
+    }
+    </script>
+
+    <!-- JavaScriptライブラリの読み込み -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+
+    <!-- メインスクリプト -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // ローディングアニメーション
+            const loaderWrapper = document.querySelector('.loader-wrapper');
+            window.addEventListener('load', function() {
+                setTimeout(function() {
+                    loaderWrapper.classList.add('hidden');
+                }, 500);
+            });
+            
+            // スムーズスクロール
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        window.scrollTo({
+                            top: target.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // スクロールダウンボタン
+            document.querySelector('.scroll-down').addEventListener('click', function() {
+                const target = document.querySelector(this.getAttribute('data-scroll-to'));
+                if (target) {
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+            
+            // ヘッダースクロール効果
+            const header = document.querySelector('header');
+            let lastScrollTop = 0;
+            
+            window.addEventListener('scroll', function() {
+                const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                
+                // ヘッダーのスタイル変更
+                if (scrollTop > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+                
+                // ヘッダーの表示/非表示
+                if (scrollTop > lastScrollTop && scrollTop > 300) {
+                    // 下にスクロール
+                    header.style.top = '-100px';
+                } else {
+                    // 上にスクロール
+                    header.style.top = '0';
+                }
+                
+                lastScrollTop = scrollTop;
+            });
+            
+            // モバイルメニュートグル
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            menuToggle.addEventListener('click', function() {
+                menuToggle.classList.toggle('active');
+                navLinks.classList.toggle('active');
+            });
+            
+            // メニューリンクをクリックしたらメニューを閉じる
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', function() {
+                    menuToggle.classList.remove('active');
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // FAQのトグル機能
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                
+                question.addEventListener('click', function() {
+                    const answer = item.querySelector('.faq-answer');
+                    const toggle = question.querySelector('.toggle');
+                    
+                    // 他のすべてのFAQを閉じる
+                    faqItems.forEach(otherItem => {
+                        if (otherItem !== item && otherItem.classList.contains('active')) {
+                            otherItem.classList.remove('active');
+                            otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                            otherItem.querySelector('.toggle').textContent = '+';
+                        }
+                    });
+                    
+                    // 現在のFAQをトグル
+                    item.classList.toggle('active');
+                    
+                    if (item.classList.contains('active')) {
+                        toggle.textContent = '-';
+                        answer.style.maxHeight = answer.scrollHeight + 'px';
+                    } else {
+                        toggle.textContent = '+';
+                        answer.style.maxHeight = null;
+                    }
+                });
+            });
+            
+            // スクロールアニメーション
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            function checkFade() {
+                fadeElements.forEach(element => {
+                    const elementTop = element.getBoundingClientRect().top;
+                    const windowHeight = window.innerHeight;
+                    
+                    if (elementTop < windowHeight - 100) {
+                        element.classList.add('visible');
+                    }
+                });
+            }
+            
+            // 初期チェック
+            checkFade();
+            
+            // スクロール時のチェック
+            window.addEventListener('scroll', checkFade);
+            
+            // モーダルビデオの制御
+            const videoPlaceholders = document.querySelectorAll('.video-placeholder');
+            const videoModal = document.getElementById('video-modal');
+            const modalVideo = document.getElementById('modal-video');
+            const modalClose = document.querySelector('.video-modal-close');
+            
+            videoPlaceholders.forEach(placeholder => {
+                placeholder.addEventListener('click', function() {
+                    const videoId = this.getAttribute('data-video-id');
+                    modalVideo.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                    videoModal.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // スクロール防止
+                });
+            });
+            
+            modalClose.addEventListener('click', function() {
+                videoModal.style.display = 'none';
+                modalVideo.src = '';
+                document.body.style.overflow = ''; // スクロール復活
+            });
+            
+            videoModal.addEventListener('click', function(e) {
+                if (e.target === videoModal) {
+                    videoModal.style.display = 'none';
+                    modalVideo.src = '';
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // Escape キーでモーダルを閉じる
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && videoModal.style.display === 'block') {
+                    videoModal.style.display = 'none';
+                    modalVideo.src = '';
+                    document.body.style.overflow = '';
+                }
+            });
+            
+            // テスティモニアルスライダー
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const track = document.querySelector('.testimonial-track');
+            const dotsContainer = document.querySelector('.testimonial-dots');
+            const prevBtn = document.querySelector('.testimonial-prev');
+            const nextBtn = document.querySelector('.testimonial-next');
+            let currentIndex = 0;
+            
+            // ドット生成
+            slides.forEach((_, i) => {
+                const dot = document.createElement('span');
+                dot.classList.add('dot');
+                if (i === 0) dot.classList.add('active');
+                dot.setAttribute('data-index', i);
+                dotsContainer.appendChild(dot);
+                
+                dot.addEventListener('click', function() {
+                    goToSlide(parseInt(this.getAttribute('data-index')));
+                });
+            });
+            
+            const dots = document.querySelectorAll('.dot');
+            
+            function goToSlide(index) {
+                currentIndex = index;
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                
+                // ドットの更新
+                dots.forEach((dot, i) => {
+                    if (i === currentIndex) {
+                        dot.classList.add('active');
+                    } else {
+                        dot.classList.remove('active');
+                    }
+                });
+            }
+            
+            prevBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+                goToSlide(currentIndex);
+            });
+            
+            nextBtn.addEventListener('click', function() {
+                currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+                goToSlide(currentIndex);
+            });
+            
+            // 自動スライド
+            let slideInterval = setInterval(function() {
+                currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+                goToSlide(currentIndex);
+            }, 5000);
+            
+            // マウスホバーで一時停止
+            track.addEventListener('mouseenter', function() {
+                clearInterval(slideInterval);
+            });
+            
+            track.addEventListener('mouseleave', function() {
+                slideInterval = setInterval(function() {
+                    currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+                    goToSlide(currentIndex);
+                }, 5000);
+            });
+            
+            // スワイプ対応
+            let touchStartX = 0;
+            let touchEndX = 0;
+            
+            track.addEventListener('touchstart', function(e) {
+                touchStartX = e.changedTouches[0].screenX;
+            });
+            
+            track.addEventListener('touchend', function(e) {
+                touchEndX = e.changedTouches[0].screenX;
+                handleSwipe();
+            });
+            
+            function handleSwipe() {
+                const swipeThreshold = 50;
+                if (touchStartX - touchEndX > swipeThreshold) {
+                    // 左スワイプ
+                    currentIndex = (currentIndex < slides.length - 1) ? currentIndex + 1 : 0;
+                    goToSlide(currentIndex);
+                } else if (touchEndX - touchStartX > swipeThreshold) {
+                    // 右スワイプ
+                    currentIndex = (currentIndex > 0) ? currentIndex - 1 : slides.length - 1;
+                    goToSlide(currentIndex);
+                }
+            }
+            
+            // GSAP アニメーション
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
+                
+                // ヒーローセクションのパララックス
+                gsap.to('.hero', {
+                    backgroundPosition: `50% ${-50}%`,
+                    ease: 'none',
+                    scrollTrigger: {
+                        trigger: '.hero',
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                });
+                
+                // 装飾要素のアニメーション
+                gsap.utils.toArray('.decoration').forEach(element => {
+                    gsap.to(element, {
+                        y: '100px',
+                        rotation: '20deg',
+                        ease: 'none',
+                        scrollTrigger: {
+                            trigger: element.parentElement,
+                            start: 'top bottom',
+                            end: 'bottom top',
+                            scrub: 1
+                        }
+                    });
+                });
+            }
         });
     </script>
 </body>
