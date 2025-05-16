@@ -1232,29 +1232,43 @@
     </section>
 
     <!-- お問い合わせセクション -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section-title fade-in">無料相談はこちら</h2>
-           <form action="https://formspree.io/f/mzzrorne" method="POST" class="contact-form fade-in">
-              <div class="form-group">
+
+<section class="contact" id="contact">
+    <div class="container">
+        <h2 class="section-title fade-in">無料相談はこちら</h2>
+        <form action="https://formspree.io/f/mzzrorne" method="POST" class="contact-form fade-in">
+            <div class="form-group">
                 <input type="text" class="form-control" name="name" placeholder="お名前" required>
-              </div>
-              <div class="form-group">
+            </div>
+            <div class="form-group">
                 <input type="email" class="form-control" name="email" placeholder="メールアドレス" required>
-              </div>
-              <div class="form-group">
+            </div>
+            <div class="form-group">
                 <input type="tel" class="form-control" name="phone" placeholder="電話番号">
-              </div>
-              <div class="form-group">
+            </div>
+            <div class="form-group">
                 <input type="text" class="form-control" name="company" placeholder="会社名">
-              </div>
-              <div class="form-group">
+            </div>
+            <!-- ドロップダウンを追加 -->
+            <div class="form-group">
+                <select class="form-control" name="service" required>
+                    <option value="" disabled selected>ご興味のあるサービス</option>
+                    <option value="sns-operation">SNS運用代行</option>
+                    <option value="sns-advisor">SNSアドバイザー</option>
+                    <option value="training">内製化研修</option>
+                    <option value="ad-video">広告動画制作</option>
+                    <option value="branding-video">ブランディング動画</option>
+                    <option value="sns-ads">SNS広告運用</option>
+                    <option value="other">その他</option>
+                </select>
+            </div>
+            <div class="form-group">
                 <textarea class="form-control" name="message" placeholder="ご相談内容" required></textarea>
-              </div>
-              <button type="submit" class="btn">送信する</button>
-            </form>
-        </div>
-    </section>
+            </div>
+            <button type="submit" class="btn">送信する</button>
+        </form>
+    </div>
+</section>
 
     <!-- フッター -->
     <footer>
