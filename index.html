@@ -173,32 +173,33 @@
             max-width: 800px;
         }
         
-        .hero h1 {
-            font-size: 3rem;
-            line-height: 1.4;
-            margin-bottom: 20px;
-            font-weight: 500;
-            font-family: 'Noto Serif JP', serif;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
-            max-width: 600px;
-        }
-        
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #ff3333;
-            color: #fff;
-            border: none;
-            font-size: 16px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            cursor: pointer;
-            transition: 0.3s ease;
-        }
+        @media (max-width: 768px) {
+  .hero-content {
+    padding-top: 80px;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+    line-height: 1.4;
+    margin-bottom: 20px;
+    word-break: keep-all;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    line-height: 1.8;
+    padding: 0 10px;
+    max-width: 90%;
+    margin: 0 auto 30px;
+  }
+
+  .btn {
+    font-size: 14px;
+    padding: 10px 24px;
+  }
+        } 
+       
         
         .btn:hover {
             background-color: #cc0000;
