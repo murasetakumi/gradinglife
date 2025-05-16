@@ -279,7 +279,15 @@
             gap: 50px;
             align-items: center;
         }
-        /* スマホ用レイアウト調整 */
+    /* PC用（デフォルト） */
+.concept-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+/* スマホ用レイアウト調整 */
 @media (max-width: 768px) {
   .concept-grid {
     display: flex;
@@ -294,7 +302,9 @@
   }
 
   .concept-text h3 {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    word-break: keep-all;
   }
 
   .concept-text p {
@@ -308,56 +318,6 @@
   }
 }
 
-        .concept-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-        }
-        
-        .services {
-            background: url('/api/placeholder/1200/800') center/cover no-repeat fixed;
-            position: relative;
-        }
-        
-        .services:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(rgba(10, 10, 10, 0.85), rgba(10, 10, 10, 0.95));
-            z-index: 1;
-        }
-        
-        .services .container {
-            position: relative;
-            z-index: 2;
-        }
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-card {
-            padding: 30px;
-            background-color: rgba(30, 30, 30, 0.7);
-            backdrop-filter: blur(5px);
-            transition: 0.3s ease;
-            border-bottom: 3px solid transparent;
-            border-radius: 3px;
-        }
-        
-        .service-card:hover {
-            transform: translateY(-10px);
-            border-bottom-color: #ff3333;
-        }
-        
-        .service-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-        }
-        
         /* 事例セクション */
         .case-studies {
             background-color: #151515;
