@@ -158,9 +158,11 @@
         
       /* ヒーローセクション */
 .hero {
-  height: 100vh;
+  min-height: 100vh; /* 高さが足りないときは伸びる */
   display: flex;
   align-items: center;
+  justify-content: flex-start;
+  padding: 100px 20px; /* 上下に余白をつける */
   position: relative;
   overflow: hidden;
   background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('Hp1.png') center/cover no-repeat;
@@ -170,6 +172,7 @@
   max-width: 800px;
   text-align: left;
   padding-left: 40px;
+  padding-right: 20px;
 }
 
 .hero h1 {
@@ -185,33 +188,31 @@
   max-width: 700px;
   margin-bottom: 40px;
 }
-.hero-title .line,
-.hero-subtitle .line {
-  display: block;
-}
 
-
-/* モバイル対応 */
+/* スマホ表示の調整 */
 @media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 80px 20px;
+  }
+
   .hero-content {
-    padding-top: 80px;
+    padding: 0;
     text-align: center;
-    padding-left: 0;
   }
 
   .hero h1 {
     font-size: 2rem;
     line-height: 1.4;
     margin-bottom: 20px;
-    word-break: keep-all;
   }
 
   .hero p {
     font-size: 1rem;
     line-height: 1.8;
-    padding: 0 10px;
     max-width: 90%;
     margin: 0 auto 30px;
+    padding: 0 10px;
   }
 
   .btn {
@@ -220,7 +221,6 @@
   }
 }
 
-        
         /* セクション共通スタイル */
         section {
             padding: 100px 0;
