@@ -898,85 +898,153 @@
     </section>
 
     <!-- 事例セクション -->
-    <section class="case-studies" id="case-studies">
-        <div class="container">
-            <h2 class="section-title fade-in">効果事例</h2>
-            
-            <!-- 実績テキスト -->
-            <div class="success-stories fade-in">
-                <div class="success-story">
-                    <h3>サウナ施設の集客成功事例</h3>
-                    <p>SNS運用を始めた１ヶ月目から<br>60名以上の予約が入り、<br>継続的な集客に成功。</p>
-                </div>
-                <div class="success-story">
-                    <h3>動画マーケティングでフォロワー急増</h3>
-                    <p>戦略的な動画10本で<br>フォロワー2000人を達成。<br>3ヶ月で企業案件の依頼も多数獲得。</p>
-                </div>
-                <div class="success-story">
-                    <h3>売上20%アップの成功事例</h3>
-                    <p>SNS運用により昨年比1000万円売り上げ向上。<br>効果的なプロモーションで<br>認知拡大に成功。</p>
-                </div>
-                <div class="success-story">
-                    <h3>採用活動強化の成功事例</h3>
-                    <p>運用開始から1ヶ月で<br>社員採用2名成功。<br>企業イメージ向上で<br>優秀な人材確保に貢献。</p>
-                </div>
-            </div>
-            
-            <!-- 動画ギャラリー -->
-<h3 class="sub-section-title fade-in">制作事例</h3>
-<div class="video-gallery">
-  <div class="video-item fade-in">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/l2bMKR55gt4" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <h4>企業プロモーション</h4>
-  </div>
+   <!-- 修正済み：動画ギャラリーをモーダル再生に対応 -->
+<section class="case-studies" id="case-studies">
+  <div class="container">
+    <h2 class="section-title fade-in">効果事例</h2>
 
-  <div class="video-item fade-in">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/jhEklOzgFJA" frameborder="0" allowfullscreen></iframe>
+    <div class="success-stories fade-in">
+      <div class="success-story">
+        <h3>サウナ施設の集客成功事例</h3>
+        <p>SNS運用を始めた１ヶ月目から<br>60名以上の予約が入り、<br>継続的な集客に成功。</p>
+      </div>
+      <div class="success-story">
+        <h3>動画マーケティングでフォロワー急増</h3>
+        <p>戦略的な動画10本で<br>フォロワー2000人を達成。<br>3ヶ月で企業案件の依頼も多数獲得。</p>
+      </div>
+      <div class="success-story">
+        <h3>売上20%アップの成功事例</h3>
+        <p>SNS運用により昨年比1000万円売り上げ向上。<br>効果的なプロモーションで<br>認知拡大に成功。</p>
+      </div>
+      <div class="success-story">
+        <h3>採用活動強化の成功事例</h3>
+        <p>運用開始から1ヶ月で<br>社員採用2名成功。<br>企業イメージ向上で<br>優秀な人材確保に貢献。</p>
+      </div>
     </div>
-    <h4>商品プロモーション</h4>
-  </div>
 
-  <div class="video-item fade-in">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/Iy0H_C0m-ss" frameborder="0" allowfullscreen></iframe>
-    </div>
-    <h4>サービス紹介</h4>
-  </div>
+    <h3 class="sub-section-title fade-in">制作事例</h3>
+    <div class="video-gallery">
+      <div class="video-item fade-in">
+        <div class="video-placeholder" data-video-id="l2bMKR55gt4">
+          <img src="https://img.youtube.com/vi/l2bMKR55gt4/hqdefault.jpg" alt="企業プロモーション">
+          <div class="play-button">▶</div>
+        </div>
+        <h4>企業プロモーション</h4>
+      </div>
 
-  <div class="video-item fade-in">
-    <div class="video-container">
-      <iframe src="https://www.youtube.com/embed/24E3ow1SNNk" frameborder="0" allowfullscreen></iframe>
+      <div class="video-item fade-in">
+        <div class="video-placeholder" data-video-id="jhEklOzgFJA">
+          <img src="https://img.youtube.com/vi/jhEklOzgFJA/hqdefault.jpg" alt="商品プロモーション">
+          <div class="play-button">▶</div>
+        </div>
+        <h4>商品プロモーション</h4>
+      </div>
+
+      <div class="video-item fade-in">
+        <div class="video-placeholder" data-video-id="Iy0H_C0m-ss">
+          <img src="https://img.youtube.com/vi/Iy0H_C0m-ss/hqdefault.jpg" alt="サービス紹介">
+          <div class="play-button">▶</div>
+        </div>
+        <h4>サービス紹介</h4>
+      </div>
+
+      <div class="video-item fade-in">
+        <div class="video-placeholder" data-video-id="24E3ow1SNNk">
+          <img src="https://img.youtube.com/vi/24E3ow1SNNk/hqdefault.jpg" alt="ブランディング">
+          <div class="play-button">▶</div>
+        </div>
+        <h4>ブランディング</h4>
+      </div>
     </div>
-    <h4>ブランディング</h4>
+  </div>
+</section>
+
+<!-- モーダル構造 -->
+<div id="video-modal" class="video-modal">
+  <div class="video-modal-content">
+    <span class="video-modal-close">×</span>
+    <div class="video-container">
+      <iframe id="modal-video" src="" frameborder="0" allowfullscreen></iframe>
+    </div>
   </div>
 </div>
 
-    
-            .video-container {
-    position: relative;
-    overflow: hidden;
-    border-radius: 3px;
-    margin-bottom: 15px;
+<style>
+.video-placeholder {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  background-color: #000;
+  cursor: pointer;
+  overflow: hidden;
 }
+.video-placeholder img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 51, 51, 0.8);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 24px;
+}
+.video-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+}
+.video-modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 800px;
+}
+.video-modal-close {
+  position: absolute;
+  top: -30px;
+  right: 0;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+</style>
 
-/* ✅ YouTube埋め込み動画のサイズ調整用 */
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    overflow: hidden;
-}
+<script>
+document.querySelectorAll('.video-placeholder').forEach(el => {
+  el.addEventListener('click', function() {
+    const videoId = this.getAttribute('data-video-id');
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('modal-video');
+    iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    modal.style.display = 'block';
+  });
+});
 
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
+document.querySelector('.video-modal-close').addEventListener('click', function() {
+  const modal = document.getElementById('video-modal');
+  const iframe = document.getElementById('modal-video');
+  iframe.src = '';
+  modal.style.display = 'none';
+});
+</script>
 
     <!-- 料金セクション -->
     <section class="pricing" id="pricing">
