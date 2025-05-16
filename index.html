@@ -279,7 +279,35 @@
             gap: 50px;
             align-items: center;
         }
-        
+        /* スマホ用レイアウト調整 */
+@media (max-width: 768px) {
+  .concept-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .concept-text,
+  .concept-image {
+    width: 100%;
+    text-align: center;
+  }
+
+  .concept-text h3 {
+    font-size: 1.5rem;
+  }
+
+  .concept-text p {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .concept-image img {
+    width: 100%;
+    height: auto;
+  }
+}
+
         .concept-text h3 {
             font-size: 1.8rem;
             margin-bottom: 20px;
