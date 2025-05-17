@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
@@ -329,12 +329,16 @@
             z-index: 2;
         }
         
-        /* 実績テキストエリア */
+        /* 実績テキストエリア - 2×2グリッドに変更 */
         .success-stories {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            grid-template-columns: repeat(2, 1fr); /* 2列に変更 */
+            grid-template-rows: repeat(2, 1fr); /* 2行に設定 */
             gap: 30px;
             margin-bottom: 60px;
+            max-width: 900px; /* 幅を制限して正方形に近づける */
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .success-story {
@@ -344,6 +348,10 @@
             border-radius: 3px;
             transition: 0.3s ease;
             border-left: 3px solid #ff3333;
+            aspect-ratio: 1/1; /* 正方形にする */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
         .success-story:hover {
@@ -356,6 +364,19 @@
             margin-bottom: 15px;
             font-family: 'Noto Serif JP', serif;
             font-weight: 500;
+        }
+        
+        /* スマホ対応 */
+        @media (max-width: 768px) {
+            .success-stories {
+                grid-template-columns: 1fr; /* スマホでは1列に */
+                max-width: 100%;
+            }
+            
+            .success-story {
+                aspect-ratio: auto; /* スマホでは固定アスペクト比を解除 */
+                padding: 20px;
+            }
         }
         
         .sub-section-title {
@@ -1005,7 +1026,7 @@
     </section>
 
     <!-- 事例セクション -->
-   <!-- 修正済み：動画ギャラリーをモーダル再生に対応 -->
+   <!-- 修正済み：効果事例を2×2の正方形グリッドに変更 -->
 <section class="case-studies" id="case-studies">
   <div class="container">
     <h2 class="section-title fade-in">効果事例</h2>
