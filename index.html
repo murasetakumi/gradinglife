@@ -3,39 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>豊田市・名古屋のSNSマーケティング専門会社 | GradingLife</title>
+    <title>豊田市・名古屋のSNSマーケティング専門会社 | Logline</title>
     <meta name="description" content="豊田市・名古屋・岡崎でSNS運用代行、動画制作、SNS広告を提供するマーケティング専門会社。経営計画から逆算したSNS戦略で集客・採用を成功に導きます。無料相談実施中。">
     <meta name="keywords" content="SNSマーケティング,SNS運用代行,動画制作,豊田市,名古屋,岡崎,集客,採用,Instagram,TikTok,YouTube">
-    <meta name="author" content="GradingLife">
+    <meta name="author" content="Logline">
     
     <!-- Open Graph -->
-    <meta property="og:title" content="豊田市・名古屋のSNSマーケティング専門会社 | GradingLife">
+    <meta property="og:title" content="豊田市・名古屋のSNSマーケティング専門会社 | Logline">
     <meta property="og:description" content="経営計画から逆算したSNS戦略で集客・採用を成功に導く専門会社。豊田市・名古屋エリアでSNS運用代行・動画制作を提供。">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://gradinglife.com">
-    <meta property="og:image" content="https://gradinglife.com/images/og-image.jpg">
-    <meta property="og:site_name" content="GradingLife">
+    <meta property="og:url" content="https://logline.com">
+    <meta property="og:image" content="https://logline.com/images/og-image.jpg">
+    <meta property="og:site_name" content="Logline">
     <meta property="og:locale" content="ja_JP">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="豊田市・名古屋のSNSマーケティング専門会社 | GradingLife">
+    <meta name="twitter:title" content="豊田市・名古屋のSNSマーケティング専門会社 | Logline">
     <meta name="twitter:description" content="経営計画から逆算したSNS戦略で集客・採用を成功に導く専門会社。">
-    <meta name="twitter:image" content="https://gradinglife.com/images/twitter-image.jpg">
+    <meta name="twitter:image" content="https://logline.com/images/twitter-image.jpg">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://gradinglife.com">
+    <link rel="canonical" href="https://logline.com">
     
     <!-- 構造化データ -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "LocalBusiness",
-      "name": "GradingLife",
+      "name": "Logline",
       "description": "豊田市・名古屋・岡崎でSNS運用代行、動画制作、SNS広告を提供するマーケティング専門会社",
-      "url": "https://gradinglife.com",
+      "url": "https://logline.com",
       "telephone": "+81-50-1234-5678",
-      "email": "info@gradinglife.com",
+      "email": "info@logline.com",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "豊田市",
@@ -69,9 +69,9 @@
       ],
       "openingHours": "Mo-Fr 09:00-18:00",
       "sameAs": [
-        "https://twitter.com/gradinglife",
-        "https://www.facebook.com/gradinglife",
-        "https://www.instagram.com/gradinglife"
+        "https://twitter.com/logline",
+        "https://www.facebook.com/logline",
+        "https://www.instagram.com/logline"
       ]
     }
     </script>
@@ -80,9 +80,9 @@
     {
       "@context": "https://schema.org",
       "@type": "Organization",
-      "name": "GradingLife",
-      "url": "https://gradinglife.com",
-      "logo": "https://gradinglife.com/images/logo.png",
+      "name": "Logline",
+      "url": "https://logline.com",
+      "logo": "https://logline.com/images/logo.png",
       "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+81-50-1234-5678",
@@ -217,11 +217,30 @@
         }
         
         .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            gap: 12px;
+        }
+        
+        .logo img {
+            height: 40px;
+            width: auto;
+            opacity: 0.8;
+            transition: all 0.3s ease;
+            filter: brightness(1.1) contrast(1.1);
+        }
+        
+        .logo:hover img {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+        
+        .logo-text {
             font-family: 'Noto Serif JP', serif;
             font-size: 28px;
             font-weight: 700;
             color: var(--darkest);
-            text-decoration: none;
             letter-spacing: 1px;
         }
         
@@ -1033,11 +1052,9 @@
             transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         
-        /* アニメーション */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: 0.8s ease;
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
         
         .slide-in-left {
@@ -1229,23 +1246,8 @@
                 line-height: 1.3;
             }
             
-        /* モバイル対応の追加調整 */
-        @media (max-width: 480px) {
-            .logo img {
-                height: 32px;
-            }
-            
-            .logo {
-                font-size: 24px;
-            }
-            
-            .footer-logo img {
-                height: 28px;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-                line-height: 1.3;
+            .hero p {
+                font-size: 1rem;
             }
             
             .section-title {
@@ -1288,7 +1290,10 @@
     <!-- ヘッダー -->
     <header>
         <div class="container header-container">
-            <a href="#home" class="logo">GradingLife</a>
+            <a href="#home" class="logo">
+                <img src="Hp7.png" alt="Logline" />
+                <span class="logo-text">Logline</span>
+            </a>
             <button class="menu-toggle" aria-label="メニューを開く">☰</button>
             <nav class="nav-links">
                 <a href="#concept">コンセプト</a>
@@ -1599,7 +1604,7 @@
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-col">
-                    <h4 class="footer-heading">GradingLife</h4>
+                    <h4 class="footer-heading">Logline</h4>
                     <p>集客採用に最新のアルゴリズムとプロの撮影技術を持って経営計画から逆算したSNS活用を支援します。</p>
                     <div class="footer-social">
                         <a href="#" class="social-icon" aria-label="X">X</a>
@@ -1627,14 +1632,13 @@
                     </ul>
                 </div>
             </div>
-            .service-card,
-            .success-story {
-                padding: 24px;
-            }
-        }
             <div class="copyright">
                 &copy; 2025 Logline. All Rights Reserved.
             </div>
+        </div>
+    </footer>
+
+    <script>
         document.addEventListener('DOMContentLoaded', function() {
             
             // FAQ アコーディオン機能
@@ -1775,4 +1779,4 @@
     </script>
 
 </body>
-</html> 
+</html>
