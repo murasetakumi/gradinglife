@@ -1,13 +1,13 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <title>LINEへリダイレクト中...</title>
-    <script>
+<body>
+  <p>LINE登録はこちら</p>
+  <a href="https://lin.ee/hH1wrTA" target="_blank">▶ SafariでLINEを開く</a>
+
+  <script>
+    if (navigator.userAgent.includes("TikTok")) {
+      alert("TikTokアプリ内ではLINEが開けないことがあります。\nSafariで開いてください。");
+    } else {
       window.location.href = "https://lin.ee/hH1wrTA";
-    </script>
-  </head>
-  <body>
-    <p>LINEへリダイレクト中です...</p>
-  </body>
-</html>
+    }
+  </script>
+</body>
+
