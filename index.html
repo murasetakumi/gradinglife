@@ -15,34 +15,38 @@
       font-size: 24px;
       margin-bottom: 12px;
     }
-    .step-text {
-      font-size: 16px;
-      margin-bottom: 24px;
-      font-weight: bold;
-      color: red;
-      line-height: 1.8;
-    }
     .step-images {
       display: flex;
       flex-direction: column;
-      gap: 28px;
+      gap: 36px;
       max-width: 500px;
-      margin: 0 auto 32px;
+      margin: 0 auto 40px;
     }
     .step-block {
       text-align: center;
     }
-    .step-label {
-      font-size: 14px;
+    .step-description {
+      font-size: 16px;
       font-weight: bold;
-      color: #555;
-      margin-bottom: 6px;
+      color: red;
+      margin-bottom: 12px;
     }
     .step-block img {
       width: 100%;
       border-radius: 8px;
-      border: 2px solid #ccc;
+      border: 4px solid #ccc;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    .line-section {
+      max-width: 500px;
+      margin: 0 auto;
+      padding-top: 24px;
+      border-top: 2px solid #ccc;
+    }
+    .line-heading {
+      font-size: 16px;
+      font-weight: bold;
+      margin: 16px 0 12px;
     }
     .cta-button {
       display: inline-block;
@@ -58,27 +62,25 @@
 </head>
 <body>
   <h1>LINE追加方法</h1>
-  <p class="step-text">
-    STEP1：右上の「…」をタップ<br>
-    STEP2：「ブラウザで開く」を選択<br>
-    STEP3：開いたページからLINEを追加
-  </p>
 
   <div class="step-images">
     <div class="step-block">
-      <div class="step-label">STEP 1</div>
+      <div class="step-description">STEP1：右上の「…」をタップ</div>
       <img src="STEP1-1.png" alt="STEP1：右上の…を押す">
     </div>
     <div class="step-block">
-      <div class="step-label">STEP 2</div>
+      <div class="step-description">STEP2：「ブラウザで開く」を選択</div>
       <img src="STEP2-1.png" alt="STEP2：ブラウザで開く">
     </div>
     <div class="step-block">
-      <div class="step-label">STEP 3</div>
+      <div class="step-description">STEP3：開いたページからLINEを追加</div>
       <img src="STEP3-1.png" alt="STEP3：LINEを追加">
     </div>
   </div>
 
-  <a class="cta-button" href="https://page.line.me/658aqhiv" target="_blank">▶ LINEを追加する</a>
+  <div class="line-section">
+    <div class="line-heading">LINE追加はこちらから</div>
+    <a class="cta-button" href="https://page.line.me/658aqhiv" target="_blank">▶ LINEを追加する</a>
+  </div>
 </body>
 </html>
